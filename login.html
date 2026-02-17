@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Garbage Marketplace | Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e9f5e9;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            width: 400px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0a7a28;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #0a7a28;
+        }
+
+        input {
+            width: 375px;
+            padding: 10px;
+            border: 1px solid #6bb06f;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0a7a28;
+            color: white;
+            font-size: 17px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #06601d;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #0a7a28;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #error {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="loginBox">
+        <h2>♻️ Login</h2>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter email" />
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="loginPass" placeholder="Enter password" />
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <p id="error"></p>
+
+        <p>
+            New User? <a onclick="showRegister()">Register Here</a>
+        </p>
+    </div>
+
+
+    <!-- Registration Box -->
+    <div class="box" id="registerBox" style="display: none;">
+        <h2>📝 Register</h2>
+
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="regName" placeholder="Enter your name" />
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="regEmail" placeholder="Enter your email" />
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="regPass" placeholder="Enter password" />
+        </div>
+
+        <button onclick="register()">Register</button>
+
+        <p id="errorReg"></p>
+
+        <p>
+            Already have an account? <a onclick="showLogin()">Login</a>
+        </p>
+    </div>
+
+
+    <script>
+        // Switch between Login and Register page
+        function showRegister() {
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("registerBox").style.display = "block";
+        }
+
+        function showLogin() {
+            document.getElementById("registerBox").style.display = "none";
+            document.getElementById("loginBox").style.display = "block";
+        }
+
+        // REGISTER NEW USER
+        function register() {
+            let name = document.getElementById("regName").value;
+            let email = document.getElementById("regEmail").value;
+            let pass = document.getElementById("regPass").value;
+
+            if (name === "" || email === "" || pass === "") {
+                document.getElementById("errorReg").textContent = "All fields are required!";
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Check if email already exists
+            let exists = users.some(user => user.email === email);
+
+            if (exists) {
+                document.getElementById("errorReg").textContent = "Email already registered!";
+                return;
+            }
+
+            // Save new user
+            users.push({ name, email, pass });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Registration Successful!");
+            showLogin();
+        }
+
+        // LOGIN USER
+        function login() {
+            let email = document.getElementById("loginEmail").value;
+            let pass = document.getElementById("loginPass").value;
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            let valid = users.find(u => u.email === email && u.pass === pass);
+
+            if (valid) {
+                alert("Login Successful!");
+                localStorage.setItem("loggedInUser", valid.name);
+
+                window.location.href = "index.html"; // redirect to home page
+            } else {
+                document.getElementById("error").textContent = "Invalid email or password!";
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Garbage Marketplace - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>♻️ E-Garbage Marketplace</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a id="loginLink" href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2 id="welcomeUser"></h2>
+                <h1>Turn E-Waste into Value</h1>
+                <p>Buy and sell electronic waste responsibly. Join the circular economy today.</p>
+                <div class="hero-buttons">
+                    <a href="buy.html" class="btn btn-primary">Browse Products</a>
+                    <a href="sell.html" class="btn btn-secondary">List an Item</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for electronics, components, or devices...">
+                <button onclick="searchCategories()">🔍 Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse E-Waste Categories</h2>
+            <div class="category-grid" id="categoryGrid">
+                <div class="category-card" data-category="smartphones">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="Smartphones">
+                    <div class="category-info">
+                        <h3>Smartphones</h3>
+                        <p>Old phones, broken screens, parts</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+                <div class="category-card" data-category="laptops">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Laptops">
+                    <div class="category-info">
+                        <h3>Laptops</h3>
+                        <p>Used laptops, parts, accessories</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+                <div class="category-card" data-category="computers">
+                    <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400" alt="Computers">
+                    <div class="category-info">
+                        <h3>Desktop Computers</h3>
+                        <p>PCs, components, monitors</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+                <div class="category-card" data-category="tablets">
+                    <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400" alt="Tablets">
+                    <div class="category-info">
+                        <h3>Tablets</h3>
+                        <p>iPads, Android tablets, e-readers</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Accessories">
+                    <div class="category-info">
+                        <h3>Accessories</h3>
+                        <p>Headphones, cables, chargers</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+                <div class="category-card" data-category="components">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400" alt="Components">
+                    <div class="category-info">
+                        <h3>Components</h3>
+                        <p>RAM, processors, hard drives</p>
+                        <a href="buy.html" class="category-link">View Items →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Help reduce electronic waste and support sustainable practices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Save Money</h3>
+                    <p>Get quality electronics at affordable prices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Trading</h3>
+                    <p>Safe and reliable marketplace for buyers and sellers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>♻️ E-Garbage Marketplace</h3>
+                    <p>
+                        <ul>
+                            <li>Building a sustainable future through responsible e-waste management.</li>
+                            <li> Our mission: Reduce, Reuse, Recycle — for a cleaner and greener planet.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="buy.html">Buy</a></li>
+                        <li><a href="sell.html">Sell</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@egarbage.com</p>
+                    <p>Phone: (+91) 78459-15478</p>
+                    <p>Join us in promoting eco-friendly disposal of electronics.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Garbage Marketplace. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

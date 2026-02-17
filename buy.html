@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy E-Waste - E-Garbage Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>♻️ E-Garbage Marketplace</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buy.html" class="active">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Browse Available Products</h1>
+            <p>Find quality electronics at great prices</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <div class="filter-bar">
+                <select id="categoryFilter" onchange="filterProducts()">
+                    <option value="all">All Categories</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="tablets">Tablets</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="components">Components</option>
+                </select>
+                <select id="conditionFilter" onchange="filterProducts()">
+                    <option value="all">All Conditions</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="parts">For Parts</option>
+                </select>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-category="laptops" data-condition="good">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400" alt="Dell Laptop">
+                    <div class="product-info">
+                        <h3>Dell Latitude E7450</h3>
+                        <div class="product-meta">
+                            <span class="category">Laptops</span>
+                            <span class="condition good">Good Condition</span>
+                        </div>
+                        <p class="product-description">14" laptop, i5 processor, 8GB RAM. Minor cosmetic wear.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;250</span>
+                            <button class="btn btn-small" onclick="buyProduct('Dell Latitude E7450')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="smartphones" data-condition="excellent">
+                    <img src="https://images.unsplash.com/photo-1580566231970-2c91d3f49637?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="iPhone">
+                    <div class="product-info">
+                        <h3>iPhone 11 Pro</h3>
+                        <div class="product-meta">
+                            <span class="category">Smartphones</span>
+                            <span class="condition excellent">Excellent</span>
+                        </div>
+                        <p class="product-description">64GB, Space Gray. Battery health 87%.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;400</span>
+                            <button class="btn btn-small" onclick="buyProduct('iPhone 11 Pro')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tablets" data-condition="good">
+                    <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400" alt="iPad">
+                    <div class="product-info">
+                        <h3>iPad Air 3rd Gen</h3>
+                        <div class="product-meta">
+                            <span class="category">Tablets</span>
+                            <span class="condition good">Good Condition</span>
+                        </div>
+                        <p class="product-description">64GB, WiFi only. Small scratch on screen.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;25000</span>
+                            <button class="btn btn-small" onclick="buyProduct('iPad Air 3rd Gen')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-condition="excellent">
+                    <img src="https://images.unsplash.com/photo-1505740106531-4243f3831c78?w=400" alt="Headphones">
+                    <div class="product-info">
+                        <h3>Sony WH-1000XM3</h3>
+                        <div class="product-meta">
+                            <span class="category">Accessories</span>
+                            <span class="condition excellent">Excellent</span>
+                        </div>
+                        <p class="product-description">Noise-canceling headphones. Like new with case.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;16000</span>
+                            <button class="btn btn-small" onclick="buyProduct('Sony WH-1000XM3')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="components" data-condition="good">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400" alt="RAM">
+                    <div class="product-info">
+                        <h3>16GB DDR4 RAM Kit</h3>
+                        <div class="product-meta">
+                            <span class="category">Components</span>
+                            <span class="condition good">Good Condition</span>
+                        </div>
+                        <p class="product-description">2x8GB DDR4 3200MHz. Tested and working.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;5200</span>
+                            <button class="btn btn-small" onclick="buyProduct('16GB DDR4 RAM Kit')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="smartphones" data-condition="fair">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400" alt="Samsung Phone">
+                    <div class="product-info">
+                        <h3>Samsung Galaxy S10</h3>
+                        <div class="product-meta">
+                            <span class="category">Smartphones</span>
+                            <span class="condition fair">Fair Condition</span>
+                        </div>
+                        <p class="product-description">128GB. Screen has cracks but fully functional.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;12500</span>
+                            <button class="btn btn-small" onclick="buyProduct('Samsung Galaxy S10')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="laptops" data-condition="parts">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" alt="MacBook">
+                    <div class="product-info">
+                        <h3>MacBook Pro 2015</h3>
+                        <div class="product-meta">
+                            <span class="category">Laptops</span>
+                            <span class="condition parts">For Parts</span>
+                        </div>
+                        <p class="product-description">Screen damaged, motherboard working. Good for parts.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;9600</span>
+                            <button class="btn btn-small" onclick="buyProduct('MacBook Pro 2015')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-condition="good">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400" alt="Keyboard">
+                    <div class="product-info">
+                        <h3>Mechanical Keyboard</h3>
+                        <div class="product-meta">
+                            <span class="category">Accessories</span>
+                            <span class="condition good">Good Condition</span>
+                        </div>
+                        <p class="product-description">Cherry MX Blue switches. RGB backlit.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;5680</span>
+                            <button class="btn btn-small" onclick="buyProduct('Mechanical Keyboard')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="components" data-condition="excellent">
+                    <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=400" alt="SSD">
+                    <div class="product-info">
+                        <h3>Samsung 500GB SSD</h3>
+                        <div class="product-meta">
+                            <span class="category">Components</span>
+                            <span class="condition excellent">Excellent</span>
+                        </div>
+                        <p class="product-description">SATA SSD. 98% health. Barely used.</p>
+                        <div class="product-footer">
+                            <span class="price">&#8377;3500</span>
+                            <button class="btn btn-small" onclick="buyProduct('Samsung 500GB SSD')">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>♻️ E-Garbage Marketplace</h3>
+                    <p>
+                        <ul>
+                            <li>Building a sustainable future through responsible e-waste management.</li>
+                            <li> Our mission: Reduce, Reuse, Recycle — for a cleaner and greener planet.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="buy.html">Buy</a></li>
+                        <li><a href="sell.html">Sell</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@egarbage.com</p>
+                    <p>Phone: (+91) 78459-15478</p>
+                    <p>Join us in promoting eco-friendly disposal of electronics.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Garbage Marketplace. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
